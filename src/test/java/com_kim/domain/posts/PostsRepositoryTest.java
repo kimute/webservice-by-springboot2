@@ -25,7 +25,7 @@ public class PostsRepositoryTest {
 
     @Test
     public void call_posts() {
-        //given
+        //given 値
         String title = "test posts";
         String content = "test contents";
         //insert update query test
