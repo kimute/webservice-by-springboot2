@@ -3,6 +3,7 @@ package com_kim.service_posts;
 import com_kim.domain.posts.PostRepository;
 import com_kim.domain.posts.Posts;
 import com_kim.web.dto.PostSaveRequestDto;
+import com_kim.web.dto.PostsResponseDto;
 import com_kim.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,12 @@ public class PostsService {
                 IllegalArgumentException("いません。id="+id));
         posts.update(requestDto.getTitle(), requestDto.getContent());
         return id;
+    }
 
+    public PostsResponseDto findById(Long id){
+        Posts entity = postRepository.findById(id)
+                .orElseThrow(() -> new
+                        IllegalArgumentException(("探し物はいません！"+id)));
+        return new PostsResponseDto(entity);
     }
 }

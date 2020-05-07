@@ -2,6 +2,7 @@ package com_kim.web;
 
 import com_kim.service_posts.PostsService;
 import com_kim.web.dto.PostSaveRequestDto;
+import com_kim.web.dto.PostsResponseDto;
 import com_kim.web.dto.PostsUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,5 +22,10 @@ public class PostsApiController {
     public long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto){
         return postsService.update(id,requestDto);
 
+    }
+
+    @GetMapping("/api/v1/posts/{id}")
+    public PostsResponseDto findById (@PathVariable Long id){
+        return postsService.findById(id);
     }
 }
