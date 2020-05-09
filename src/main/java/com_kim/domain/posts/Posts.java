@@ -1,5 +1,6 @@
 package com_kim.domain.posts;
 
+import com_kim.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-public class Posts {
+public class Posts extends BaseTimeEntity {
     //Spring DATA Jpa
     //PK field: @id
     //Generated Value:auto incrementのため作成
