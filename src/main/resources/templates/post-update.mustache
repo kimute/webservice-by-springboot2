@@ -1,0 +1,32 @@
+{{>layout/header}}
+<h1>コメント修正</h1>
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="id">NO</label>
+                <input type="text" class="form-control"
+                       id="id" value="{{post.id}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="form-control"
+                       id="title" value="{{post.title}}">
+            </div>
+            <div class="form-group">
+                <label for="author">作成者</label>
+                <input type="text" class="form-control"
+                       id="author" value="{{post.author}}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="content">コンテント</label>
+                <textarea class="form-control"
+                          id="content" value="{{post.content}}"></textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">キャンセル</a>
+        <button type="button" class="btn btn-primary" id="btn-update">修正完了</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">削除</button>
+    </div>
+</div>
+{{>layout/footer}}
